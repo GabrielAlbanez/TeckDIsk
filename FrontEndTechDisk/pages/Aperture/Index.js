@@ -5,7 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import { AntDesign } from '@expo/vector-icons'; 
 
-export default function Aperture() {
+export default function Aperture({navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.Logo}>
@@ -13,7 +13,9 @@ export default function Aperture() {
       </View>
       <View style={styles.footer}>
          <Text style={styles.Text}>CLIQUE ABAIXO</Text>
-         <TouchableOpacity style={styles.buttoEntar}>
+         <TouchableOpacity style={styles.buttoEntar} onPress={()=>{
+          navigation.navigate('Register')
+         }}>
          <AntDesign name="right" size={80} color="black" />
          </TouchableOpacity>
       </View>
