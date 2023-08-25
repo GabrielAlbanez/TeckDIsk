@@ -6,6 +6,7 @@ import Aperture from "../pages/Aperture/Index";
 import Login from "../pages/Login/Index";
 import Register from "../pages/Register/Index";
 import ForgotPassword from "../pages/forgotPassword/Index";
+import Navbar from "../components/Navbar";
 
 
 export default function MyRoutes() {
