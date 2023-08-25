@@ -14,7 +14,7 @@ export default function Aperture({navigation}) {
       <View style={styles.footer}>
          <Text style={styles.Text}>CLIQUE ABAIXO</Text>
          <TouchableOpacity style={styles.buttoEntar} onPress={()=>{
-          navigation.navigate('Register')
+          navigation.navigate('Login')
          }}>
          <AntDesign name="right" size={80} color="black" />
          </TouchableOpacity>
