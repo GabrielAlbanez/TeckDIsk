@@ -47,7 +47,7 @@ const Login = ({ navigation }) => {
             outlineColor="black"
             
           />
-          <TouchableOpacity style={styles.buttonForgetPassword}><Text style={{color : "#FFFFFF",fontSize : 20}}>Esqueci Senha? Clique Aqui!!</Text></TouchableOpacity>
+          <TouchableOpacity onPress={()=>{navigation.navigate("ForgotPassword")}} style={styles.buttonForgetPassword}><Text style={{color : "#FFFFFF",fontSize : 20}}>Esqueci Senha? Clique Aqui!!</Text></TouchableOpacity>
         </View>
       </View>
       <View style={styles.buttosFoter}>
