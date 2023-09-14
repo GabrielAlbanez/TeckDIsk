@@ -2,40 +2,45 @@ import { AntDesign } from "@expo/vector-icons";
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { TextInput, Provider, MD2Colors } from "react-native-paper";
+import { useTema } from "../../common/context/Tema";
 import ButtonPersonalizado from "../../components/Button";
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
+  const { tema, setTema ,text, corButton } = useTema();
 
   return (
-    <View style={styles.container}>
+    <View style={{   flex: 1,  justifyContent: "center",    alignItems: "center", padding: 10,
+    gap: 30,backgroundColor : tema}}>
       <View style={{ width: "100%"}}>
-        <Text style={{ fontSize: 27, textAlign: "center",color : "#23386D" }}>
+        <Text style={{ fontSize: 27, textAlign: "center",color : text }}>
           FAÇA SEU LOGIN PARA RECEBER AJUDA!
         </Text>
       </View>
       <View style={styles.containerInput}>
         <View style={styles.containerInput}>
-          <Text style={styles.textLabel}>
+          <Text style={{  fontSize: 25,
+    textAlign: "center",color : text}}>
             Digite seu{" "}
-            <Text style={{ textDecorationLine: "underline",color : "#23386D" }}>E-Mail</Text>
+            <Text style={{ textDecorationLine: "underline",color : text }}>E-Mail</Text>
           </Text>
           <TextInput
             label="Email"
             style={styles.input}
             activeUnderlineColor={MD2Colors.white}
             textColor="black"
+            
             cursorColor={MD2Colors.black}
             outlineColor="black"
           />
         </View>
         <View style={styles.containerInput}>
-          <Text style={styles.textLabel}>
+          <Text style={{  fontSize: 25,
+    textAlign: "center",color : text}}>
             Digite sua{" "}
-            <Text style={{ textDecorationLine: "underline",color : "#23386D" }}>Senha</Text>
+            <Text style={{ textDecorationLine: "underline",color : text }}>Senha</Text>
           </Text>
           <TextInput
             label="Senha"
@@ -51,10 +56,10 @@ const Login = ({ navigation }) => {
         </View>
       </View>
       <View style={styles.buttosFoter}>
-      <ButtonPersonalizado text={"Entrar"} onPress={() => {
+      <ButtonPersonalizado texto={"Entrar"} onPress={() => {
           navigation.replace("Home");
         }}/>
-      <ButtonPersonalizado text={"Cadastre-se"} onPress={() => {
+      <ButtonPersonalizado texto={"Cadastre-se"} onPress={() => {
           navigation.replace("Register");
         }}/>
       </View>

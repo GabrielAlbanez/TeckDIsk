@@ -2,25 +2,34 @@ import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { TextInput, Provider, MD2Colors } from "react-native-paper";
 import ButtonPersonalizado from "../../components/Button";
+import { useTema } from "../../common/context/Tema";
 
 export default function Register({navigation}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
+  const { tema, setTema ,text } = useTema();
 
   return (
-    <View style={styles.container}>
+    <View style={{  flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      padding: 10,
+      gap: 30,
+      marginTop : 25,
+      backgroundColor : tema
+      }}>
       <View style={{ width: "100%" }}>
-        <Text style={{ fontSize: 27, textAlign: "center", color: "#23386D" }}>
+        <Text style={{ fontSize: 27, textAlign: "center", color: text }}>
           FAÇA SEU CADASTRO!
         </Text>
       </View>
       <View style={styles.containerInput}>
         <View style={styles.containerInput}>
-          <Text style={styles.textLabel}>
+          <Text style={{  fontSize: 25,
+    textAlign: "center",color : text}}>
             Digite seu{" "}
-            <Text style={{ textDecorationLine: "underline", color: "#23386D" }}>
+            <Text style={{ textDecorationLine: "underline", color: text }}>
               Nome
             </Text>
           </Text>
@@ -34,9 +43,10 @@ export default function Register({navigation}) {
           />
         </View>
         <View style={styles.containerInput}>
-          <Text style={styles.textLabel}>
+          <Text style={{  fontSize: 25,
+    textAlign: "center",color : text}}>
             Digite seu{" "}
-            <Text style={{ textDecorationLine: "underline", color: "#23386D" }}>
+            <Text style={{ textDecorationLine: "underline", color: text }}>
               E-Mail
             </Text>
           </Text>
@@ -56,9 +66,10 @@ export default function Register({navigation}) {
           </TouchableOpacity> */}
         </View>
         <View style={styles.containerInput}>
-          <Text style={styles.textLabel}>
+          <Text style={{  fontSize: 25,
+    textAlign: "center",color : text}}>
             Digite sua{" "}
-            <Text style={{ textDecorationLine: "underline", color: "#23386D" }}>
+            <Text style={{ textDecorationLine: "underline", color: text }}>
               Senha
             </Text>
           </Text>
@@ -72,9 +83,10 @@ export default function Register({navigation}) {
           />
         </View>
         <View style={styles.containerInput}>
-          <Text style={styles.textLabel}>
+          <Text style={{  fontSize: 25,
+    textAlign: "center",color : text}}>
             Digite seu{" "}
-            <Text style={{ textDecorationLine: "underline", color: "#23386D" }}>
+            <Text style={{ textDecorationLine: "underline", color: text }}>
               Telefone
             </Text>
           </Text>
@@ -89,7 +101,7 @@ export default function Register({navigation}) {
         </View>
       </View>
       <View style={styles.buttosFoter}>
-      <ButtonPersonalizado text={"Cadastre-se"} onPress={() => {
+      <ButtonPersonalizado texto={"Cadastre-se"} onPress={() => {
           navigation.replace("Home");
         }}/>
       </View>

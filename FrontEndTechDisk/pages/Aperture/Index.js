@@ -19,19 +19,19 @@ export default function Aperture({ navigation }) {
   
 
 
-  const { tema, setTema } = useTema();
+  const { tema, setTema ,text,corButton } = useTema();
 
   return (
     <View style={{
       width: "100%",
       height: "100%",
-      backgroundColor: 'white',
+      backgroundColor: tema,
     }}>
       <View style={styles.Logo}>
         <Image source={Logo} style={styles.LogoImg} />
       </View>
       <View style={styles.footer}>
-        <Text style={styles.Text}>CLIQUE ABAIXO</Text>
+        <Text style={{fontSize : 35, lineHeight: 84,textAlign: "center",color : text}}>CLIQUE ABAIXO</Text>
         <TouchableOpacity
           style={styles.buttoEntar}
           onPress={() => {
